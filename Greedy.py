@@ -19,7 +19,7 @@ def a_star(graph, start, goal):
             new_cost = cost_so_far[current] + graph[current][neighbor]
             if neighbor not in cost_so_far or new_cost < cost_so_far[neighbor]:
                 cost_so_far[neighbor] = new_cost
-                priority = new_cost
+                priority = hsld[neighbor]
                 heapq.heappush(pq, (priority, neighbor))
                 came_from[neighbor] = current
 
