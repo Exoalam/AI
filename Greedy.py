@@ -1,6 +1,6 @@
 import heapq
 
-def a_star(graph, start, goal):
+def greedy(graph, start, goal):
     pq = []
     heapq.heappush(pq, (0, start))
     came_from = dict()
@@ -58,7 +58,7 @@ hsld = {'Arad':366, 'Bucharest':0, 'Craiova':160, 'Dobreta':242, 'Eforie':161, '
 start = 'Arad'
 goal = 'Bucharest'
 
-came_from, cost_so_far = a_star(graph, start, goal)
+came_from, cost_so_far = greedy(graph, start, goal)
 path = reconstruct_path(came_from, start, goal)
 
 print(f"Path: {path}")
